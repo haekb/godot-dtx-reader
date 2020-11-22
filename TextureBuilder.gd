@@ -15,6 +15,9 @@ func build(source_file, options):
 	var model = dtx_file.DTX.new()
 	
 	var response = model.read(file)
+	
+	file.close()
+	
 	if response.code == model.IMPORT_RETURN.ERROR:
 		print("IMPORT ERROR: %s" % response.message)
 		return null
